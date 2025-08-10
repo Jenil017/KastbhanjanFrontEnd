@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kastbhanajan Plywood — Surat</title>
+  <meta name="description" content="Kastbhanajan Plywood — Quality plywood, laminates, and interior solutions in Surat. Owner: Jemish Moradiya. Near YogiChawk, Beside HP Petrol Pump." />
+  <style>
+    :root {
+      /* 3-color palette */
+      --primary: #0f1220; /* deep navy background */
+      --accent: #1fc9c9; /* teal accent */
+      --text: #e8eef9; /* off-white text */
+
+      /* derived (opacity only, from the same palette) */
+      --muted: rgba(232,238,249,0.75);
+      --line: rgba(232,238,249,0.12);
+      --glass: rgba(255,255,255,0.05);
+
+      --radius: 14px;
+      --maxw: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 500px at 80% -10%, rgba(31,201,201,0.10), transparent 60%),
+        radial-gradient(700px 400px at 10% 0%, rgba(31,201,201,0.08), transparent 60%),
+        var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: linear-gradient(to bottom, rgba(15,18,32,0.85), rgba(15,18,32,0.65));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), rgba(31,201,201,0.6));
+      box-shadow: 0 6px 20px rgba(31,201,201,0.28);
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      font-weight: 600;
+    }
+
+    .menu a {
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .menu a:hover,
+    .menu a:focus {
+      color: var(--text);
+      background: var(--glass);
+      outline: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 90px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .sec-head {
+      margin-bottom: 22px;
+    }
+
+    .sec-eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 800;
+    }
+
+    .sec-title {
+      font-size: 36px;
+      margin: 8px 0 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .sec-sub {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    /* Cards and surfaces */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 100px;
+      background:
+        radial-gradient(600px 300px at 90% 20%, rgba(31,201,201,0.16), transparent 60%),
+        radial-gradient(700px 300px at 10% 30%, rgba(31,201,201,0.12), transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .h-title {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .accent-text {
+      background: linear-gradient(90deg, var(--text), rgba(232,238,249,0.8) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .h-sub {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      transition: transform 0.12s ease, background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(232,238,249,0.25);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), rgba(31,201,201,0.75));
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(31,201,201,0.28);
+      color: #062b2b;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .kpi {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .kpi h4 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .kpi p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* About */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    /* Services */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .service:before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(300px 120px at 10% 0%, rgba(31,201,201,0.18), transparent);
+      transform: rotate(10deg);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(31,201,201,0.18);
+      color: var(--text);
+      border: 1px solid rgba(31,201,201,0.35);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .service h3 {
+      margin: 6px 0 6px;
+    }
+
+    .service p {
+      color: var(--muted);
+    }
+
+    /* Owner */
+    .owner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .owner-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .owner-details {
+      display: grid;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .owner-name {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .owner-role {
+      color: var(--muted);
+      margin: 2px 0 0;
+    }
+
+    /* Contact */
+    .contact {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      outline: none;
+      transition: border 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(31,201,201,0.7);
+      box-shadow: 0 0 0 4px rgba(31,201,201,0.25);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 26px 0;
+      font-size: 14px;
+    }
+
+    .foot-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .foot-links a {
+      color: var(--muted);
+    }
+
+    .foot-links a:hover {
+      color: var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-wrap,
+      .owner-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .h-title {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu {
+        display: none;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .h-title {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Kastbhanajan Plywood</span>
+      </div>
+      <nav class="menu" aria-label="Section links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#owner">Owner</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="h-title">Premium <span class="accent-text">Plywood & Interior</span> Solutions in Surat</h1>
+        <p class="h-sub">Kastbhanajan Plywood supplies trusted-grade plywood, laminates, and interior materials with expert guidance and on-time delivery. Build with confidence and elevate your space.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Get a Quote</a>
+          <a class="btn" href="#services">View Products & Services</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi">
+            <h4>3000+</h4>
+            <p>Sheets In Stock</p>
+          </div>
+          <div class="kpi">
+            <h4>98%</h4>
+            <p>On-time Delivery</p>
+          </div>
+          <div class="kpi">
+            <h4>Local</h4>
+            <p>Trusted in Surat</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;">Why choose Kastbhanajan</h3>
+        <ul class="list">
+          <li>Reliable, moisture-resistant plywood options</li>
+          <li>Handpicked laminates and decorative surfaces</li>
+          <li>Expert guidance for residential & commercial needs</li>
+          <li>Competitive pricing with transparent quotes</li>
+          <li>Fast service across Surat</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">About</div>
+        <h2 class="sec-title">Quality materials, dependable service</h2>
+        <p class="sec-sub">We deliver premium plywood and interior products tailored to carpenters, contractors, and homeowners. Our focus is quality, availability, and guidance so your projects finish strong.</p>
+      </div>
+      <div class="about-wrap">
+        <div class="card">
+          <h3>What we offer</h3>
+          <ul class="list">
+            <li>Boiling Water Resistant (BWR) & Marine Grade plywood</li>
+            <li>Commercial & MR grade plywood for interiors</li>
+            <li>Laminates, veneers, and edging accessories</li>
+            <li>Cut-to-size and material selection assistance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why it matters</h3>
+          <ul class="list">
+            <li>Consistent quality reduces rework and waste</li>
+            <li>Right specs for kitchens, wardrobes, offices, more</li>
+            <li>Local stock for faster turnaround</li>
+            <li>Honest pricing and clear timelines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-eyebrow">Products & Services</div>
+        <h2 class="sec-title">Built for durability and finish</h2>
+        <p class="sec-sub">Choose from a curated range of structural and decorative materials, backed by expert advice.</p>
+      </div>
+      <div class="grid-3">
+        <div class="service">
+          <span class="badge">Best Seller</span>
+          <h3>Plywood (BWR/MR)</h3>
+          <p>Structural reliability for kitchens, wardrobes, and custom furniture with moisture protection.</p>
+        </div>
+        <div class="service">
+          <h3>Marine Grade</h3>
+          <p>High-strength, water-resistant sheets for heavy-duty and high-humidity applications.</p>
+        </div>
+        <div class="service">
+          <h3>Laminates & Veneers</h3>
+          <p>Decorative finishes with modern textures and long-lasting surface protection.</p>
+        </div>
+        <div class="service">
+          <h3>Edge Band & Accessories</h3>
+          <p>Neat edges and matching trims for a flawless, professional look.</p>
+        </div>
+        <div class="service">
+          <h3>Consultation</h3>
+          <p>Get the right grade, thickness, and finish for your use case and budget.</p>
+        </div>
+        <div class="service">
+          <h3>Delivery in Surat</h3>
+          <p>Timely, careful delivery to your site with coordinated scheduling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner -->
+  <section id="owner">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Owner</div>
+      <h2 class="sec-title">Meet the proprietor</h2>
+      <p class="sec-sub">Personal support and straightforward communication for every order.</p>
+    </div>
+    <div class="owner-grid">
+      <div class="owner-card">
+        <h3 class="owner-name">Jemish Moradiya</h3>
+        <p class="owner-role">Owner, Kastbhanajan Plywood</p>
+        <div class="owner-details">
+          <span class="chip">Phone: 9879848433</span>
+          <span class="chip">Address: Near YogiChawk, Beside HP Petrol Pump, Surat</span>
+          <span class="chip">Available Mon–Sat, 10 AM – 7 PM IST</span>
+        </div>
+      </div>
+      <div class="owner-card">
+        <h3 style="margin-top:0;">Our promise</h3>
+        <p>We help you pick the right materials for long‑term performance. Expect honest advice, clear pricing, and reliable delivery for every project.</p>
+        <div class="cta-row" style="margin-top:14px;">
+          <a class="btn btn-primary" href="#contact">Request a call</a>
+          <a class="btn" href="#services">Explore offerings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="contact">
+  <div class="card">
+    <form name="contact" aria-label="Contact form" onsubmit="return false">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" placeholder="9879XXXXXX" required />
+      </div>
+      <div>
+        <label for="message">Requirements</label>
+        <textarea id="message" placeholder="Plywood grade, thickness, quantity, delivery location..." required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" aria-label="Send message">Send Message</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Kastbhanajan Plywood</h3>
+    <ul class="list">
+      <li>Owner: Jemish Moradiya</li>
+      <li>Phone: 9879848433</li>
+      <li>Address: Near YogiChawk, Beside HP Petrol Pump, Surat</li>
+    </ul>
+    <p class="sec-sub" style="margin-top:10px;">Visit us for samples and material guidance.</p>
+  </div>
+</div>
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Contact</div>
+      <h2 class="sec-title">Get a quick quote</h2>
+      <p class="sec-sub">Share your requirements and we'll respond within one business day.</p>
+    </div>
+    <div class="contact">
+      <div class="card">
+        <form name="contact" aria-label="Contact form" onsubmit="return false">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="9879XXXXXX" required />
+          </div>
+          <div>
+            <label for="message">Requirements</label>
+            <textarea id="message" placeholder="Plywood grade, thickness, quantity, delivery location..." required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" aria-label="Send message">Send Message</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">Kastbhanajan Plywood</h3>
+        <ul class="list">
+          <li>Owner: Jemish Moradiya</li>
+          <li>Phone: 9879848433</li>
+          <li>Address: Near YogiChawk, Beside HP Petrol Pump, Surat</li>
+        </ul>
+        <p class="sec-sub" style="margin-top:10px;">Visit us for samples and material guidance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container foot-row">
+    <div>© 2025 Kastbhanajan Plywood. All rights reserved.</div>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
